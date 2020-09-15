@@ -22,7 +22,7 @@
 <script>
 import eventBus from "../../utils/eventBus";
 import okSvg from "../../assets/icons/ok.svg";
-import bgImg from "../../assets/bg.jpg";
+
 import circle from '../../assets/icons/circle.svg'
 import rect from '../../assets/icons/rect.svg'
 import decision from '../../assets/icons/decision.svg'
@@ -75,9 +75,6 @@ export default {
           size: "80*80",
           shape: "customCircle",
           color: "#1890ff",
-          image:
-            "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
-          stateImage: okSvg,
           fill: '#fef7e7',
           stroke: '#fdd9a5',
           leftImage: circle,
@@ -86,19 +83,17 @@ export default {
         },
 
         {
-          name: "背景图片节点",
-          label: "背景图片节点",
-          size: "170*34",
+          name: "规则包",
+          label: "规则包",
+          size: "88*56",
           type: "node",
           x: 0,
           y: 0,
           shape: "customNode",
           color: "#1890ff",
-          image:
-            "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
-          stateImage: okSvg,
+          fill: '#e7f7fe',
+          stroke: '#7ac7ff',
           leftImage: rect,
-          backImage: bgImg,
           inPoints: [[0, 0.5]],
           outPoints: [[1, 0.5]]
         },
@@ -141,9 +136,10 @@ export default {
           size: "80*80",
           shape: "customCircle",
           color: "#1890ff",
-          image:
-            "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
-          stateImage: okSvg,
+          fill: '#fc913a',
+          stroke: '#ff4e50',
+          // label文本颜色
+          fontColor: '#fff',
           leftImage: circle,
           inPoints: [[0, 0.5]],
           isDoingEnd: true

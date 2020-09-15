@@ -32,7 +32,7 @@ export const baseDraw = (cfg, group, mainId) => {
         textBaseline: "middle",
         text: cfg.label,
         parent: mainId,
-        fill: "#565758"
+        fill: cfg.fontColor || "#565758"
       },
       draggable: true,
       name: 'image4'

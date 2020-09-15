@@ -23,7 +23,7 @@ const customCircle = () => {
           y: offsetY,
           r: size[0]/2,
           stroke: cfg.stroke || '#ced4d9',
-          fill: cfg.fill || '#fff'//此处必须有fill 不然不能触发事件
+          fill: cfg.fill || '#fff'//此处必须有fill 不然不能触发事件,
         },
         draggable: true,
         name: 'key-shape'
