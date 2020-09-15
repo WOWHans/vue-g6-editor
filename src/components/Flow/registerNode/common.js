@@ -44,12 +44,8 @@ export const baseDraw = (cfg, group, mainId) => {
     for (let i = 0; i < cfg.inPoints.length; i++) {
       let x,
         y = 0;
-      //0为顶 1为底
-      if (cfg.inPoints[i][0] === 0) {
-        y = 0;
-      } else {
-        y = height;
-      }
+
+      y = height * cfg.inPoints[i][0];
       x = width * cfg.inPoints[i][1];
       const id = 'circle' + uniqueId()
       group.addShape("circle", {
@@ -88,12 +84,7 @@ export const baseDraw = (cfg, group, mainId) => {
     for (let i = 0; i < cfg.outPoints.length; i++) {
       let x,
         y = 0;
-      //0为顶 1为底
-      if (cfg.outPoints[i][0] === 0) {
-        y = 0;
-      } else {
-        y = height;
-      }
+      y = height * cfg.outPoints[i][0];
       x = width * cfg.outPoints[i][1];
       const id = 'circle' + uniqueId()
       group.addShape("circle", {

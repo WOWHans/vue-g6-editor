@@ -9,10 +9,14 @@ const customCircle = () => {
       if (!size) {
         size = [170, 34]
       }
+      // 此处必须是NUMBER 不然bbox不正常
+      const width = parseInt(size[0]);
+      const height = parseInt(size[1]);
 
       // 此处必须有偏移 不然drag-node错位
       const offsetX = 0
       const offsetY = 0
+
       const mainId = 'circle' + uniqueId()
 
       // 外边框

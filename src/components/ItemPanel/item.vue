@@ -100,18 +100,18 @@ export default {
         {
           name: "双输出节点",
           label: "双输出节点",
-          size: "170*34",
+          size: "86*86",
           type: "node",
           x: 0,
           y: 0,
-          shape: "customNode",
+          shape: "customDiamond",
           color: "#1890ff",
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
           leftImage: decision,
           inPoints: [[0, 0.5]],
-          outPoints: [[1, 0.4], [1, 0.6]]
+          outPoints: [[1, 0.5],[0.5,0],[0.5,1]]
         },
         {
           name: "大型节点",
