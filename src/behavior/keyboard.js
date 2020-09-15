@@ -14,13 +14,17 @@ export default {
     },
 
     onKeyDown(e) {
+
         const code = e.keyCode || e.which;
-        switch (code) {
-            case this.deleteKeyCode:
-            case this.backKeyCode:
-                eventBus.$emit('deleteItem')
-                break
+        if (e.ctrlKey) {
+            switch (code) {
+                case this.deleteKeyCode:
+                case this.backKeyCode:
+                    eventBus.$emit('deleteItem')
+                    break
+            }
         }
+        
     },
     onKeyUp() {
         this.keydown = false;

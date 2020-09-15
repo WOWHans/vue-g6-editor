@@ -48,10 +48,12 @@ export default {
 
       this.graph = new G6.Graph({
         container: "graph-container",
+        // 画布高宽
         height: height,
         width: width,
+        // 节点分组类型，支持 circle 和 rect
         groupType: 'rect',
-          groupStyle: {
+        groupStyle: {
           default: {},
           hover: {},
           collapse: {},

@@ -3,7 +3,7 @@
     <li
       v-for="(item,index) in list"
       :key="index"
-      class="getItem"
+      :class="item.shape"
       :data-shape="item.shape"
       :data-type="item.type"
       :data-size="item.size"
@@ -11,8 +11,10 @@
       @dragstart="handleDragstart"
       @dragend="handleDragEnd($event,item)"
     >
-      <span class="pannel-type-icon" :style="{background:'url('+item.image+')'}"></span>
-      {{item.name}}
+
+      <div>
+        <img :src="item.leftImage" alt="">
+      </div>
     </li>
   </ul>
 </template>
@@ -21,6 +23,10 @@
 import eventBus from "../../utils/eventBus";
 import okSvg from "../../assets/icons/ok.svg";
 import bgImg from "../../assets/bg.jpg";
+import circle from '../../assets/icons/circle.svg'
+// import rect from '../../assets/icons/rect.svg'
+// import decision from '../../assets/icons/decision.svg'
+// import model from '../../assets/icons/model.svg'
 
 /* TODO: 待添加的自定义节点
  * S-开始节点
@@ -65,15 +71,14 @@ export default {
         {
           name: "测试节点",
           label: "测试节点",
-          size: "170*34",
           type: "node",
-          x: 0,
-          y: 0,
-          shape: "customNode",
+          size: "80*80",
+          shape: "customCircle",
           color: "#1890ff",
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
+          leftImage: circle,
           inPoints: [[0, 0.5]],
           outPoints: [[1, 0.5]]
         },
@@ -90,6 +95,7 @@ export default {
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
+          leftImage: circle,
           backImage: bgImg,
           inPoints: [[0, 0.5]],
           outPoints: [[1, 0.5]]
@@ -106,6 +112,7 @@ export default {
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
+          leftImage: circle,
           inPoints: [[0, 0.5]],
           outPoints: [[1, 0.4], [1, 0.6]]
         },
@@ -121,6 +128,7 @@ export default {
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
+          leftImage: circle,
           inPoints: [[0, 0.5]],
           outPoints: [[1, 0.5]]
         },
@@ -136,6 +144,7 @@ export default {
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
+          leftImage: circle,
           outPoints: [[1, 0.5]],
           isDoingStart: true
         },
@@ -151,6 +160,7 @@ export default {
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
+          leftImage: circle,
           inPoints: [[0, 0.5]],
           isDoingEnd: true
         },
@@ -165,6 +175,7 @@ export default {
           color: "#1890ff",
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
+            leftImage: circle,
           inPoints: [[0, 0.5]],
           isDoingEnd: true
         },
@@ -224,18 +235,7 @@ export default {
 }
 .itempannel li {
   color: rgba(0, 0, 0, 0.65);
-  border-radius: 4px;
-  width: 160px;
-  height: 28px;
-  line-height: 26px;
-  padding-left: 8px;
-  border: 1px solid rgba(0, 0, 0, 0);
   list-style-type: none;
-}
-.itempannel li:hover {
-  background: white;
-  border: 1px solid #ced4d9;
-  cursor: move;
 }
 
 .itempannel .pannel-type-icon {

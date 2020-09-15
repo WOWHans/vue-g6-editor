@@ -75,10 +75,12 @@ export default {
         self.graph = self.page.graph;
         eventBus.$on("nodeselectchange", item => {
           if (item.select === true && item.target.getType() === "node") {
+            console.log('item',item)
             self.status = "node-selected";
             self.item = item.target;
             self.node = item.target.getModel();
           } else {
+            console.log(2333)
             self.status = "canvas-selected";
             self.item = null;
             self.node = null;
@@ -87,10 +89,13 @@ export default {
       });
     },
     handleChangeName(e) {
+      console.log('e-val',e)
       const model = {
         label: e
       };
-
+      console.log('model',model)
+      console.log('graph',this.graph)
+      console.log('this.item',this.item)
       this.graph.update(this.item, model);
     },
     changeGridState(value) {
