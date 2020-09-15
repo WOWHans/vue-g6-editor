@@ -1,4 +1,4 @@
-![效果图](https://github.com/WOWHans/vue-g6-editor/blob/master/overview.jpg)
+![效果图](/overview.jpg)
 # vue-g6-editor
 
 fork版本
