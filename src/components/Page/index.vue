@@ -93,7 +93,7 @@ export default {
 
 <style scoped>
 .page{
-  margin-left:200px;
+  margin-left:130px;
   margin-right: 200px;
 }
 </style>

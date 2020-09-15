@@ -24,9 +24,9 @@ import eventBus from "../../utils/eventBus";
 import okSvg from "../../assets/icons/ok.svg";
 import bgImg from "../../assets/bg.jpg";
 import circle from '../../assets/icons/circle.svg'
-// import rect from '../../assets/icons/rect.svg'
-// import decision from '../../assets/icons/decision.svg'
-// import model from '../../assets/icons/model.svg'
+import rect from '../../assets/icons/rect.svg'
+import decision from '../../assets/icons/decision.svg'
+import model from '../../assets/icons/model.svg'
 
 /* TODO: 待添加的自定义节点
  * S-开始节点
@@ -69,8 +69,8 @@ export default {
       offsetY: 0,
       list: [
         {
-          name: "测试节点",
-          label: "测试节点",
+          name: "开始节点",
+          label: "开始节点",
           type: "node",
           size: "80*80",
           shape: "customCircle",
@@ -79,8 +79,8 @@ export default {
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
           leftImage: circle,
-          inPoints: [[0, 0.5]],
-          outPoints: [[1, 0.5]]
+          outPoints: [[1, 0.5]],
+          isDoingStart: true
         },
 
         {
@@ -95,7 +95,7 @@ export default {
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
-          leftImage: circle,
+          leftImage: rect,
           backImage: bgImg,
           inPoints: [[0, 0.5]],
           outPoints: [[1, 0.5]]
@@ -112,7 +112,7 @@ export default {
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
-          leftImage: circle,
+          leftImage: decision,
           inPoints: [[0, 0.5]],
           outPoints: [[1, 0.4], [1, 0.6]]
         },
@@ -128,34 +128,16 @@ export default {
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
-          leftImage: circle,
+          leftImage: model,
           inPoints: [[0, 0.5]],
           outPoints: [[1, 0.5]]
         },
         {
-          name: "动画开始节点",
-          label: "动画开始",
-          size: "170*34",
+          name: "结束节点",
+          label: "结束节点",
           type: "node",
-          x: 0,
-          y: 0,
-          shape: "customNode",
-          color: "#1890ff",
-          image:
-            "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
-          stateImage: okSvg,
-          leftImage: circle,
-          outPoints: [[1, 0.5]],
-          isDoingStart: true
-        },
-        {
-          name: "动画结束节点",
-          label: "动画结束",
-          size: "170*34",
-          type: "node",
-          x: 0,
-          y: 0,
-          shape: "customNode",
+          size: "80*80",
+          shape: "customCircle",
           color: "#1890ff",
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
@@ -163,22 +145,7 @@ export default {
           leftImage: circle,
           inPoints: [[0, 0.5]],
           isDoingEnd: true
-        },
-        {
-          name: "testNode",
-          label: "testNode",
-          size: "170*34",
-          type: "node",
-          x: 0,
-          y: 0,
-          shape: "testNode",
-          color: "#1890ff",
-          image:
-            "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
-            leftImage: circle,
-          inPoints: [[0, 0.5]],
-          isDoingEnd: true
-        },
+        }
       ]
     };
   },
@@ -225,13 +192,9 @@ export default {
   left: 0px;
   z-index: 2;
   background: #f7f9fb;
-  width: 200px;
+  padding:8px 16px;
   padding-top: 8px;
   border-right: 1px solid #e6e9ed;
-}
-.itempannel ul {
-  padding: 0px;
-  padding-left: 16px;
 }
 .itempannel li {
   color: rgba(0, 0, 0, 0.65);
