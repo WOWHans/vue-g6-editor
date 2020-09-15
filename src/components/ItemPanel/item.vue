@@ -78,6 +78,8 @@ export default {
           image:
             "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
           stateImage: okSvg,
+          fill: '#fef7e7',
+          stroke: '#fdd9a5',
           leftImage: circle,
           outPoints: [[1, 0.5]],
           isDoingStart: true

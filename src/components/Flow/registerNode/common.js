@@ -145,8 +145,6 @@ export const baseSetState = (name, value, item) => {
     return circle.attrs.isInPoint || circle.attrs.isOutPoint;
   });
   const selectStyles = () => {
-    shape.attr("fill", "#f3f9ff");
-    shape.attr("stroke", "#6ab7ff");
     shape.attr("cursor", "move");
     children.forEach(child => {
       child.attr("cursor", "move");
@@ -156,8 +154,6 @@ export const baseSetState = (name, value, item) => {
     })
   };
   const unSelectStyles = () => {
-    shape.attr("fill", "#fff");
-    shape.attr("stroke", "#ced4d9");
     circles.forEach(circle => {
       circle.attr('opacity', 0)
     })

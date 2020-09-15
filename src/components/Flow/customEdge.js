@@ -165,7 +165,7 @@ const customEdge = {
       draw(cfg, group) {
         let sourceNode, targetNode, start, end
         if (!cfg.source.x) {
-          console.log('cfg',cfg)
+
           sourceNode = cfg.source
           start = { x: sourceNode.x + cfg.start.x, y: sourceNode.y + cfg.start.y }
         } else {
