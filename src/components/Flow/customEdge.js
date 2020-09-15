@@ -165,13 +165,14 @@ const customEdge = {
       draw(cfg, group) {
         let sourceNode, targetNode, start, end
         if (!cfg.source.x) {
-          sourceNode = cfg.source.getModel()
+          console.log('cfg',cfg)
+          sourceNode = cfg.source
           start = { x: sourceNode.x + cfg.start.x, y: sourceNode.y + cfg.start.y }
         } else {
           start = cfg.source
         }
         if (!cfg.target.x) {
-          targetNode = cfg.target.getModel()
+          targetNode = cfg.target
           end = { x: targetNode.x + cfg.end.x, y: targetNode.y + cfg.end.y }
         } else {
           end = cfg.target

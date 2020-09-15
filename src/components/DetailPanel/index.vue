@@ -44,7 +44,7 @@
 import G6 from '@antv/g6';
 import eventBus from "../../utils/eventBus";
 
-console.log()
+
 
 const { Grid } = G6;
 

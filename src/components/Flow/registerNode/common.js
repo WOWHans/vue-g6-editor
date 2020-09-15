@@ -16,7 +16,7 @@ export const baseDraw = (cfg, group, mainId) => {
   // 此处必须是NUMBER 不然bbox不正常
   const width = parseInt(size[0]);
   const height = parseInt(size[1]);
-  const color = cfg.color;
+  // const color = cfg.color;
   // 此处必须有偏移 不然drag-node错位
   const offsetX = -width / 2
   const offsetY = -height / 2

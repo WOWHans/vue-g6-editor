@@ -1,7 +1,6 @@
 import * as Util from '@antv/util'
 import eventBus from "../utils/eventBus";
 
-console.log(Util)
 
 export default {
     getDefaultCfg() {

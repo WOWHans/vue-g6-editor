@@ -22,7 +22,7 @@ export default class Editor {
     }
   }
   add(type, item) {
-    console.log(item);
+
     this.graph.add(type, item)
   }
   update(item, model) {
