@@ -1,5 +1,6 @@
-![效果图](/overview.jpg)
-# vue-g6-editor
+# Overview
+
+![overview](https://user-images.githubusercontent.com/10258691/93251305-9692a680-f7c6-11ea-9c70-0b356bb65330.jpg)
 
 fork版本
 
