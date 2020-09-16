@@ -8,12 +8,10 @@
       <div class="bottom-container">
         <!--itempannel-->
         <item-panel />
-        <!--detailpannel-->
-        <detail-panel />
+         <!--page-->
+        <page :height="height" :width="width"  :data="data"/>
         <!--miniMap-->
-        <minimap />
-        <!--page-->
-        <page :height="height" :width="width"  :data="data" />
+        <minimap/>
       </div>
     </div>
     <Flow />
@@ -23,7 +21,7 @@
 <script>
 import Toolbar from "../Toolbar";
 import ItemPanel from "../ItemPanel";
-import DetailPanel from "../DetailPanel";
+
 import Minimap from "../Minimap";
 import Page from "../Page";
 import Flow from "../Flow"
@@ -35,7 +33,7 @@ export default {
   components: {
     Toolbar,
     ItemPanel,
-    DetailPanel,
+
     Minimap,
     Page,
     ContextMenu,
@@ -75,14 +73,17 @@ export default {
 
 <style scoped>
 .editor {
-  position: relative;
   width: 100%;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  display: flex;
+  flex-direction: column;
 }
 .bottom-container {
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 </style>

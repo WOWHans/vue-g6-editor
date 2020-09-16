@@ -16,6 +16,7 @@ import G6 from "@antv/g6";
 import eventBus from "../../utils/eventBus";
 
 const { Minimap } = G6;
+const { Grid } = G6;
 
 export default {
   data() {
@@ -35,21 +36,18 @@ export default {
   methods: {
     initMinmap() {
       const cfgs = {
-        container: "minimap"
+        container: "minimap",
+        size:[200,300]
       };
       this.minimap = new Minimap({ ...cfgs });
+      this.graph.addPlugin(this.minimap)
     },
     bindEvent() {
       eventBus.$on("afterAddPage", page => {
+        console.log(page)
         this.graph = page.graph;
-        this.bindPage();
+        this.graph.addPlugin(new Grid({begin:[-131,0]}));
       });
-    },
-    bindPage() {
-      if (!this.minimap || !this.graph) {
-        return;
-      }
-     this.graph.addPlugin(this.minimap)
     }
   }
 };
@@ -58,11 +56,11 @@ export default {
 <style scoped>
 #navigator {
   width: 200px;
-  /* height: 176px; */
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  z-index: 3;
+  height: 406px;
+  /* position: absolute; */
+  /* bottom: 0px; */
+  /* right: 0px; */
+  /* z-index: 3; */
 }
 
 .pannel-title {

@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <div :id="pageId" class="graph-container" style="position: relative;"></div>
+    <div :id="pageId" class="graph-container"></div>
   </div>
 </template>
 
@@ -43,6 +43,8 @@ export default {
   },
   methods: {
     init() {
+      console.log('this.height',this.height)
+      console.log('this.width',this.width)
       const height =  this.height - 42 
       const width =  this.width - 400
 
@@ -76,9 +78,10 @@ export default {
           // moveNode:[ "drag-item"]
         }
       });
+      
       const { editor, command } = this.$parent;
       editor.emit("afterAddPage", { graph: this.graph, command });
-
+      this.graph.getContainer().
       this.readData();
     },
     readData() {
@@ -92,8 +95,7 @@ export default {
 </script>
 
 <style scoped>
-.page{
-  margin-left:130px;
-  margin-right: 200px;
+.g6-grid-container {
+  left: 0 !important;
 }
 </style>

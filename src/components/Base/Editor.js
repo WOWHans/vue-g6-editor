@@ -10,6 +10,7 @@ export default class Editor {
   }
   emit(event, params) {
     if (event === 'afterAddPage') {
+      console.log(2333)
       this.graph = params.graph
     }
     eventBus.$emit(event, params)
