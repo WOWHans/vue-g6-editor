@@ -2,6 +2,8 @@ fork版本
 
 已更新G6到3.4.4版本
 
+**Inspired by** [GGEditor](https://github.com/alibaba/GGEditor)
+
 # 更新Fork版本记录
 
 ## Overview
