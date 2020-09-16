@@ -85,12 +85,13 @@
     ></i> -->
     <!-- <i data-command="unGroup" class="command iconfont icon-ungroup disable" title="解组"></i> -->
     <el-button @click="consoleData" type="primary">控制台输出数据</el-button>
+    <el-button @click="readData" type="primary">渲染数据</el-button>
   </div>
 </template>
 
 <script>
 import * as Util from '@antv/util'
-import { uniqueId, getBox } from "../../utils";
+import { uniqueId, getBox, renderData } from "../../utils";
 import eventBus from "../../utils/eventBus";
 
 export default {
@@ -171,7 +172,6 @@ export default {
       if (this.redoList.length > 0) this.command.redo();
     },
     handleDelete() {
-      console.log('this.selectedItem',this.selectedItem)
       if (this.selectedItem && this.selectedItem.length > 0) {
         this.command.executeCommand("delete", this.selectedItem);
         this.selectedItem = null;
@@ -323,6 +323,13 @@ export default {
 
     consoleData() {
       console.log(this.graph.save());
+    },
+    readData() {
+      this.graph.read(
+        {
+          nodes:[renderData({bizId:33,name:'阿里风控分',label: '阿里风控分',x:100,y:100})]
+        }
+      )
     }
   }
 };

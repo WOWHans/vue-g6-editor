@@ -59,7 +59,8 @@ export default {
       graph: {},
       item: {},
       node: {},
-      grid: null
+      grid: null,
+      drawer: false
     };
   },
   created() {
@@ -75,10 +76,10 @@ export default {
         self.graph = self.page.graph;
         eventBus.$on("nodeselectchange", item => {
           if (item.select === true && item.target.getType() === "node") {
-
             self.status = "node-selected";
             self.item = item.target;
             self.node = item.target.getModel();
+            self.drawer = true
           } else {
 
             self.status = "canvas-selected";

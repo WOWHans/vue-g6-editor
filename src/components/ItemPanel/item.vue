@@ -21,12 +21,7 @@
 
 <script>
 import eventBus from "../../utils/eventBus";
-import okSvg from "../../assets/icons/ok.svg";
-
-import circle from '../../assets/icons/circle.svg'
-import rect from '../../assets/icons/rect.svg'
-import decision from '../../assets/icons/decision.svg'
-import model from '../../assets/icons/model.svg'
+import { templateArray } from './itemTemplate' 
 
 /* TODO: 待添加的自定义节点
  * S-开始节点
@@ -67,84 +62,7 @@ export default {
       command: null,
       offsetX: 0,
       offsetY: 0,
-      list: [
-        {
-          name: "开始节点",
-          label: "开始节点",
-          type: "node",
-          size: "80*80",
-          shape: "customCircle",
-          color: "#1890ff",
-          fill: '#fef7e7',
-          stroke: '#fdd9a5',
-          leftImage: circle,
-          outPoints: [[1, 0.5]],
-          isDoingStart: true
-        },
-
-        {
-          name: "规则包",
-          label: "规则包",
-          size: "88*56",
-          type: "node",
-          x: 0,
-          y: 0,
-          shape: "customNode",
-          color: "#1890ff",
-          fill: '#e7f7fe',
-          stroke: '#7ac7ff',
-          leftImage: rect,
-          inPoints: [[0, 0.5]],
-          outPoints: [[1, 0.5]]
-        },
-        {
-          name: "双输出节点",
-          label: "双输出节点",
-          size: "86*86",
-          type: "node",
-          x: 0,
-          y: 0,
-          shape: "customDiamond",
-          color: "#1890ff",
-          image:
-            "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
-          stateImage: okSvg,
-          leftImage: decision,
-          inPoints: [[0, 0.5]],
-          outPoints: [[1, 0.5],[0.5,0],[0.5,1]]
-        },
-        {
-          name: "大型节点",
-          label: "大型节点",
-          size: "340*34",
-          type: "node",
-          x: 0,
-          y: 0,
-          shape: "customNode",
-          color: "#1890ff",
-          image:
-            "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
-          stateImage: okSvg,
-          leftImage: model,
-          inPoints: [[0, 0.5]],
-          outPoints: [[1, 0.5]]
-        },
-        {
-          name: "结束节点",
-          label: "结束节点",
-          type: "node",
-          size: "80*80",
-          shape: "customCircle",
-          color: "#1890ff",
-          fill: '#fc913a',
-          stroke: '#ff4e50',
-          // label文本颜色
-          fontColor: '#fff',
-          leftImage: circle,
-          inPoints: [[0, 0.5]],
-          isDoingEnd: true
-        }
-      ]
+      list: templateArray
     };
   },
   created() {
@@ -167,7 +85,7 @@ export default {
         data.x = xy.x;
         data.y = xy.y;
         if (item.size) {
-          data.size = item.size.split("*");
+          data.size = item.size
         }
         data.type = "node";
         this.command.executeCommand("add", [data]);
