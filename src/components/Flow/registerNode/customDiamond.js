@@ -21,7 +21,8 @@ const customDiamond = () => {
       const shape = group.addShape('path', {
         attrs: {
           path: this.getPath(cfg), // 因为增加了 update 所以要把共用方法提取出来
-          stroke: cfg.color // 颜色应用到边上，如果应用到填充，则使用 fill: cfg.color
+          stroke: cfg.stroke || '#ced4d9',
+          fill: cfg.fill || '#fff'//此处必须有fill 不然不能触发事件,
         }
       });
       if(cfg.label) { // 如果有文本

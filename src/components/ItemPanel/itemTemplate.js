@@ -52,6 +52,8 @@ export const templateArray = [
         y: 0,
         shape: "customDiamond",
         color: "#1890ff",
+        fill: '#e8fffb',
+        stroke: '#5cdbd3',
         image:
           "https://gw.alipayobjects.com/zos/rmsportal/czNEJAmyDpclFaSucYWB.svg",
         stateImage: okSvg,
