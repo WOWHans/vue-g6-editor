@@ -13,7 +13,7 @@
 
 <script>
 import G6 from "@antv/g6";
-import eventBus from "../../utils/eventBus";
+import eventBus from "../../../utils/eventBus";
 
 const { Minimap } = G6;
 const { Grid } = G6;
@@ -37,14 +37,13 @@ export default {
     initMinmap() {
       const cfgs = {
         container: "minimap",
-        size:[200,300]
+        size:[280,374]
       };
       this.minimap = new Minimap({ ...cfgs });
       this.graph.addPlugin(this.minimap)
     },
     bindEvent() {
       eventBus.$on("afterAddPage", page => {
-        console.log(page)
         this.graph = page.graph;
         this.graph.addPlugin(new Grid({begin:[-131,0]}));
       });
@@ -55,7 +54,7 @@ export default {
 
 <style scoped>
 #navigator {
-  width: 200px;
+  width: 280px;
   height: 406px;
   /* position: absolute; */
   /* bottom: 0px; */

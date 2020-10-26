@@ -1,22 +1,22 @@
 <template>
   <div class="detailpannel">
-    <div>
+
       <div v-if="status=='node-selected'" class="pannel" id="node_detailpannel">
         <div class="pannel-title">模型详情</div>
         <div class="block-container">
-          <el-row :gutter="10">
-            <el-col :span="8">名称</el-col>
-            <el-col :span="16">
+          <el-row>
+            <el-col>名称</el-col>
+            <el-col :span="10">
               <el-input v-model="node.label" @change="handleChangeName" />
             </el-col>
-            <el-col :span="8">任意属性</el-col>
-            <el-col :span="16">
+            <el-col>任意属性</el-col>
+            <el-col :span="10">
               <el-input v-model="node.xxx" />
             </el-col>
           </el-row>
         </div>
       </div>
-      <div v-if="status==='canvas-selected'" class="pannel" id="canvas_detailpannel">
+      <div v-else-if="status==='canvas-selected'" class="pannel" id="canvas_detailpannel">
         <div class="pannel-title">画布</div>
         <div class="block-container">
           <el-checkbox v-model="showGrid" @change="changeGridState">网格对齐</el-checkbox>
@@ -36,13 +36,13 @@
         </div>
       </div>
       -->
-    </div>
+
   </div>
 </template>
 
 <script>
 import G6 from '@antv/g6';
-import eventBus from "../../utils/eventBus";
+import eventBus from "../../../utils/eventBus";
 
 
 
@@ -110,16 +110,12 @@ export default {
 
 <style scoped>
 .detailpannel {
-  height: 100%;
-  position: absolute;
-  right: 0px;
-  z-index: 2;
+  width: 100%;
   background: #f7f9fb;
-  width: 200px;
   border-left: 1px solid #e6e9ed;
 }
 .detailpannel .block-container {
-  padding: 16px 8px;
+
 }
 .block-container .el-col {
   height: 28px;

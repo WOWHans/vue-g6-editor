@@ -5,13 +5,13 @@
       <!--toolbar-->
       <toolbar />
       <div style="height: 42px;"></div>
-      <div class="bottom-container">
+      <div class="main-container">
         <!--itempannel-->
         <item-panel />
          <!--page-->
         <page :height="height" :width="width"  :data="data"/>
-        <!--miniMap-->
-        <minimap/>
+
+        <right-panel/>
       </div>
     </div>
     <Flow />
@@ -21,8 +21,8 @@
 <script>
 import Toolbar from "../Toolbar";
 import ItemPanel from "../ItemPanel";
+import RightPanel from '../RightPanel'
 
-import Minimap from "../Minimap";
 import Page from "../Page";
 import Flow from "../Flow"
 import ContextMenu from "../ContextMenu";
@@ -34,7 +34,7 @@ export default {
     Toolbar,
     ItemPanel,
 
-    Minimap,
+    RightPanel,
     Page,
     ContextMenu,
     Flow
@@ -81,8 +81,7 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.bottom-container {
-  position: relative;
+.main-container {
   display: flex;
   flex-direction: row;
 }

@@ -43,8 +43,6 @@ export default {
   },
   methods: {
     init() {
-      console.log('this.height',this.height)
-      console.log('this.width',this.width)
       const height =  this.height - 42 
       const width =  this.width - 400
 
