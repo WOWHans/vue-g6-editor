@@ -148,7 +148,7 @@ export default {
     this.graph.setMode('default')
   },
   onDragEnd(e) {
-    console.log(e)
+    // console.log(e)
   },
   // 若在拖拽时，鼠标移出画布区域，此时放开鼠标无法终止 drag 行为。在画布外监听 mouseup 事件，放开则终止
   onOutOfRange(e) {
@@ -219,7 +219,7 @@ export default {
           }
         });
       } else if (this.target) {
-        console.log(bbox);
+        // console.log(bbox);
         this.shape = parent.addShape('rect', {
           attrs: {
             width: bbox.width,

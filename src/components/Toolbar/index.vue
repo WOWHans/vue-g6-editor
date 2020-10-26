@@ -322,7 +322,7 @@ export default {
     },
 
     consoleData() {
-      console.log(this.graph.save());
+      // console.log(this.graph.save());
     },
     readData() {
       this.graph.read(
