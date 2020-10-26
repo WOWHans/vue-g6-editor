@@ -72,9 +72,11 @@ export default {
     bindEvent() {
       let self = this;
       eventBus.$on("afterAddPage", page => {
+        console.log('page',page)
         self.page = page;
-        self.graph = self.page.graph;
+        self.graph = page.graph;
         eventBus.$on("nodeselectchange", item => {
+          console.log('nodeselectchange',item)
           if (item.select === true && item.target.getType() === "node") {
             self.status = "node-selected";
             self.item = item.target;
@@ -97,6 +99,7 @@ export default {
       this.graph.update(this.item, model);
     },
     changeGridState(value) {
+      console.log(value)
       if (value) {
         this.grid = new Grid();
         this.graph.addPlugin(this.grid);
